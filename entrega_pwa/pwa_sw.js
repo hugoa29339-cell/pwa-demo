@@ -4,7 +4,7 @@ var urls = [
     'estilos.css',
     'bootstrap-5.3.8-dist/css/bootstrap.min.css',
     'bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js',
-    'iconos/logoDi.jpg',                     // <--- Esta es la ruta correcta de tu logo
+    'iconos/logoDI.jpg',                     // <--- Esta es la ruta correcta de tu logo
     'manifest_and_icons/icon512_rounded.png', // <--- Esta es la ruta de tu icono de app
     'offline.html'
 ];
@@ -38,4 +38,5 @@ self.addEventListener("fetch", function (evento) {
 			}
 		})
     );
+
 });
