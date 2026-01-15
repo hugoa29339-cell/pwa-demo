@@ -1,0 +1,125 @@
+<?php
+session_start(); // Inicia la sesión para poder usarla
+$usuario = ''; // Variable para almacenar el usuario
+$pass = ''; // Variable para almacenar la contraseña
+$msj = ''; // Variable para mensajes de error
+
+// Evitar extract() por motivos de seguridad y claridad
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Verifica si el formulario fue enviado
+    $usuario = isset($_POST['usuario']) ? trim($_POST['usuario']) : ''; // Obtiene usuario y quita espacios
+    $pass = isset($_POST['pass']) ? $_POST['pass'] : ''; // Obtiene contraseña
+
+    if ($usuario === '' || $pass === '') { // Verifica que ambos campos tengan valor
+        $msj = 'Debes completar los campos.'; // Mensaje si faltan datos
+    } else {
+        // Usar comparación correcta (===) en vez de asignación
+        if ($usuario === 'hugo' && $pass === '1234') { // Valida credenciales hardcoded
+            // Regenerar id de sesión al iniciar sesión
+            session_regenerate_id(true); // Genera nuevo ID de sesión por seguridad
+            $_SESSION['login'] = 'Hugo Claveria'; // Guarda usuario en sesión
+            header('Location: index.php'); // Redirige a página principal
+            exit; // Detiene ejecución
+        } else {
+            $msj = 'Datos incorrectos.'; // Mensaje si credenciales no coinciden
+        }
+    }
+}
+?>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login di25</title>
+       <!-- Enlaces a Bootstrap y CSS personalizado -->
+       <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="estilos.css">
+       <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
+       <style>
+    /* Estilos para ocupar toda la pantalla */
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    /* Fondo con gradiente morado/azul */
+    body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    /* Contenedor del formulario centrado */
+    .formulario {
+        max-width: 380px;
+        padding: 2rem;
+        margin: auto !important;
+        width: 100% !important;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilo de campos de formulario */
+    .form-control {
+        border-radius: 8px;
+        border: 2px solid #dee2e6;
+    }
+
+    /* Efecto al enfocar campo */
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+    }
+
+    /* Estilo del mensaje de error */
+    .msj {
+        display: block;
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    /* Botón de acceso */
+    .btn-primary {
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+    /* Efecto hover del botón */
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+    }
+</style>
+    </head>
+    <body class="d-flex align-items-center justify-content-center bg-body-tertiary">
+        <!-- Formulario que se envía a sí mismo (login.php) -->
+        <form class="formulario" id="formularioLogin" method="post" action="login.php">
+            <h1 class="h3 mb-3 fw-normal">Identificate...</h1>
+
+            <!-- Campo de usuario -->
+            <div class="form-floating">
+                <input type="text" class="form-control input-sm" 
+                    name="usuario" id="usuario" placeholder="Usuario">
+                <label for="usuario">Usuario</label>
+            </div><br>
+            
+            <!-- Campo de contraseña -->
+            <div class="form-floating">
+                <input type="password" class="form-control input-sm" 
+                    name="pass" id="pass" placeholder="Password">
+                <label for="pass">Contraseña</label>
+            </div><br><br>
+
+            <!-- Muestra mensaje de error si existe -->
+            <span id="msj" class="msj"><?php echo $msj; ?></span>
+            
+            <!-- Botón de envío -->
+            <button class="btn btn-primary w-100 py-2" type="submit">Acceder</button>
+
+        </form>
+
+    </body>
+</html>
+
+</html>

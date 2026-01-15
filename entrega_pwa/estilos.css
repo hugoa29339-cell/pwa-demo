@@ -1,0 +1,479 @@
+/* ============================================
+   MEJORAS VISUALES - SIN CAMBIAR ESTRUCTURA
+   ============================================ */
+
+/* --- GENERAL --- */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e3e9f0 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- LOGIN PAGE --- */
+.container {
+    max-width: 450px;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border: none;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* --- FORMULARIOS --- */
+.form-control {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 15px;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+    background-color: #fff;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* --- BOTONES --- */
+.btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    border: none;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(17, 153, 142, 0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
+    border: none;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(252, 74, 26, 0.3);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    color: white;
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(240, 147, 251, 0.3);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* --- TABLAS --- */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    transition: all 0.3s;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01);
+}
+
+.table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* --- CARDS/CONTAINERS --- */
+.container, .container-fluid {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Wrapper para las vistas */
+#capaContenido > * {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+/* --- BADGES/ESTADOS --- */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.badge-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.badge-danger {
+    background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
+}
+
+/* --- INPUTS CON ICONOS --- */
+.input-group-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+/* --- ALERTAS --- */
+.alert {
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
+    color: white;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* --- MEJORAS DE TÍTULOS --- */
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    font-weight: 700;
+}
+
+h2 {
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* --- ANIMACIÓN SUAVE PARA CARGA DE VISTAS --- */
+#capaContenido {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- MEJORAS EN FORMULARIOS DE BÚSQUEDA --- */
+.row.mb-3 {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px !important;
+}
+
+/* --- SOMBRAS SUTILES PARA SEPARAR SECCIONES --- */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #667eea, transparent);
+    margin: 30px 0;
+}
+
+/* --- MEJORA DE SELECT --- */
+select.form-control {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23667eea' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 12px;
+    padding-right: 40px;
+}
+
+/* --- HOVER EFFECT EN FILAS DE TABLA --- */
+.table tbody tr {
+    cursor: pointer;
+}
+
+/* --- MEJORA DE INVALID FEEDBACK --- */
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* --- ESPACIADO MEJORADO --- */
+.mb-3 {
+    margin-bottom: 20px !important;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .card-body {
+        padding: 20px;
+    }
+    
+    .table {
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* --- MEJORA VISUAL DE CHECKBOXES Y RADIOS --- */
+.form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+    border: 2px solid #667eea;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #667eea;
+    border-color: #667eea;
+}
+
+.form-check-label {
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+/* --- BOTONES DE ACCIÓN EN TABLAS (para que se vean mejor) --- */
+.table .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    margin: 0 3px;
+}
+
+/* --- MEJORA DE TEXTAREA --- */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* --- LOADING STATE (opcional, por si quieres añadirlo) --- */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #667eea;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   PAGINADOR
+   ============================================ */
+.paginador-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.paginador-container .pagination {
+    margin: 0;
+}
+
+.paginador-container .page-item .page-link {
+    color: #667eea;
+    border-radius: 50%;
+    margin: 0 3px;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.paginador-container .page-item.disabled .page-link {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
+
+.paginador-container .page-item:not(.disabled) .page-link:hover {
+    background-color: #e0e3f3;
+    transform: translateY(-2px);
+}
+
+.paginador-container .page-item.active .page-link {
+    background-color: #667eea;
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.paginador-container .info-resultados {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+.paginador-container .resultados-por-pagina,
+.paginador-container .page-item-input {
+    display: flex;
+    align-items: center;
+}
+
+.paginador-container .form-label,
+.paginador-container .page-item-label {
+    font-size: 14px;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+/* --- RESPONSIVE DEL PAGINADOR --- */
+@media (max-width: 768px) {
+    .paginador-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .paginador-container .info-resultados {
+        margin-bottom: 15px !important;
+    }
+
+    .paginador-container .pagination {
+        margin-bottom: 15px;
+    }
+
+    .paginador-container .resultados-por-pagina {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .paginador-container .page-item-label,
+    .paginador-container .page-item-input {
+        display: none !important; /* Ocultar el 'Ir a la página' en pantallas muy pequeñas */
+    }
+}

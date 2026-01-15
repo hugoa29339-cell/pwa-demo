@@ -1,0 +1,18 @@
+# Instrucciones de la Aplicación
+
+## Acceso
+La aplicación está configurada para ser accesible únicamente mediante login.
+Puede utilizar las siguientes credenciales para probar los distintos módulos:
+
+- **Usuario**: hugo (o cualquier usuario registrado en la base de datos)
+- **Contraseña**: hugo
+
+## Instalación como PWA
+La aplicación cumple con los estándares de Progressive Web App (PWA):
+1. Abra la URL de la aplicación en su dispositivo (móvil o escritorio).
+2. En el navegador (recomendado Chrome o Edge), aparecerá un icono de "Instalar App" en la barra de direcciones o en el menú de opciones.
+3. Una vez instalada, podrá acceder a la aplicación directamente desde su pantalla de inicio.
+
+## Publicación
+La aplicación se ha desarrollado siguiendo el patrón MVC y es totalmente responsiva.
+Puede ser publicada en cualquier hosting que soporte PHP y MySQL (ej. InfinityFree, 000webhost).

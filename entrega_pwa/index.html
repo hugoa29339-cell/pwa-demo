@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="es_ES">
+    
+<head>
+    <title>App D.I. 2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsive para móviles -->
+    <!-- Enlazamos Bootstrap -->
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css"> <!-- Framework CSS -->
+    <link rel="stylesheet" href="estilos.css"> <!-- CSS personalizado -->
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script> <!-- JavaScript de Bootstrap -->
+    <link rel="manifest" href="./manifest_and_icons/manifest.json"> <!-- Manifest para PWA -->
+</head>
+<body>
+        <!-- Cabecera con logo, título y botón login/logout -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Logo (visible siempre) -->
+                <div class="col-md-2 col-sm-9">
+                    <img src="iconos/logoDi.jpg" alt="Logo D.I." style="height:3em;">
+                </div>
+                <!-- Título (solo visible en pantallas medianas o grandes) -->
+                <div class="col-md-8 d-none d-md-block text-center">Aplicacion de Hugo Claveria D.I. 2025</div>
+                <!-- Botón login/logout (siempre visible) -->
+                <div class="col-md-2 col-sm-3">
+                    <?php echo $btnlog; ?> <!-- Muestra botón según estado de sesión -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Barra de navegación con menú desplegable -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <!-- Botón hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menú colapsable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <!-- Menú desplegable de mantenimiento de datos -->
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Mtto.Datos</a>
+                <ul class="dropdown-menu">
+                    <!-- Opción Usuarios: carga vista con AJAX -->
+                    <li><a class="dropdown-item" onclick="obtenerVista('Usuarios', 'getVistaUsuariosPrincipal', 'capaContenido')">Usuarios</a></li>
+                    <!-- Opción Productos: carga vista con AJAX -->
+                    <li><a class="dropdown-item" onclick="obtenerVista('Productos', 'getVistaProductosPrincipal', 'capaContenido')">Productos</a></li>
+                    <!-- Opción Pedidos: carga vista con AJAX -->
+                    <li><a class="dropdown-item" onclick="obtenerVista('Pedidos', 'getVistaPedidosPrincipal', 'capaContenido')">Pedidos</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+        
+        <!-- Sección de menú (placeholder) -->
+        <div class="container-fluid">
+            Menú
+        </div>
+        
+        <!-- Contenedor principal donde se cargan las vistas por AJAX -->
+        <div class="container-fluid" id="capaContenido">
+            Contenido
+        </div>
+        
+        <!-- Contenedor para formularios de edición/creación -->
+        <div id="capaEditarCrear" class="container-fluid" ></div>
+
+        <!-- INICIO CAMBIO: Forzar la actualización del script en el navegador -->
+        <!-- Se ha cambiado la versión de v=1.2 a v=1.3. -->
+        <!-- Esto es una técnica para 'engañar' al navegador y forzarlo a descargar el archivo index.js de nuevo, -->
+        <!-- en lugar de usar la versión antigua que tenía guardada en la caché. -->
+        <!-- Fue necesario para que los cambios de seguridad en JavaScript se aplicaran. -->
+        <script src="index.js?v=1.6" defer></script>
+        <!-- FIN CAMBIO -->
+        <script src= "pwa.js" async></script> <!-- JavaScript para PWA -->
+    </body>
+
+</html>
